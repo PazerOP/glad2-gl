@@ -8,8 +8,6 @@ project(
 	LANGUAGES CXX
 )
 
-find_package(mh-cmake-common CONFIG REQUIRED)
-
 add_library(${PROJECT_NAME} STATIC
 	"include/glad/gl.h"
 	"include/KHR/khrplatform.h"
@@ -24,4 +22,5 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 	"$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
 )
 
+find_package(mh-cmake-common CONFIG REQUIRED)
 mh_basic_install()
