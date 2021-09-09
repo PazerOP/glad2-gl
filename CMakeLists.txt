@@ -5,7 +5,6 @@ project(
 	VERSION 1.0
 	DESCRIPTION "Output of https://github.com/dav1dde/glad-web"
 	HOMEPAGE_URL "https://github.com/PazerOP/glad2-gl"
-	LANGUAGES CXX
 )
 
 add_library(${PROJECT_NAME} STATIC
@@ -15,10 +14,8 @@ add_library(${PROJECT_NAME} STATIC
 )
 add_library(mh::glad2-gl ALIAS ${PROJECT_NAME})
 
-set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
-
 target_include_directories(${PROJECT_NAME} PUBLIC
-	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/cpp/include>"
+	"$<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>"
 	"$<INSTALL_INTERFACE:${CMAKE_INSTALL_INCLUDEDIR}>"
 )
 
