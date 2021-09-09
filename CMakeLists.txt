@@ -20,4 +20,6 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 
 find_package(mh-cmake-common CONFIG REQUIRED)
-mh_basic_install()
+mh_basic_install(
+	PROJ_INCLUDE_DIRS "include/"
+)
