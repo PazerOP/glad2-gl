@@ -1,0 +1,9 @@
+{
+	"name": "glad2-gl",
+	"version-date": "2021-09-09",
+	"description": "Output of https://github.com/dav1dde/glad-web",
+	"homepage": "https://github.com/PazerOP/glad2-gl",
+	"dependencies": [
+		"mh-cmake-common"
+	]
+}
