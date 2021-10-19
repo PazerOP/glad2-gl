@@ -3,7 +3,7 @@
 		{
 			"kind": "git",
 			"repository": "https://github.com/PazerOP/vcpkg-registry",
-			"baseline": "fd8384635aaf9ca4f133793a9548370b50a7faf3",
+			"baseline": "6374d62306fbb2eaefc201c27bd6ccd5dae0ba09",
 			"packages": [
 				"mh-cmake-common"
 			]
