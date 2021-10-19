@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.17)
 
 project(
-	glad2-gl
+	mh-glad2-gl
 	VERSION 1.0
 	DESCRIPTION "Output of https://github.com/dav1dde/glad-web"
 	HOMEPAGE_URL "https://github.com/PazerOP/glad2-gl"
