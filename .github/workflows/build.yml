@@ -49,7 +49,7 @@ jobs:
 
   registry-update:
     needs: build
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
     - uses: PazerOP/vcpkg-registry-update@HEAD
       with:
