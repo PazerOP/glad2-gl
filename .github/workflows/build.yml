@@ -49,5 +49,5 @@ jobs:
     - uses: PazerOP/vcpkg-registry-update@HEAD
       with:
         port-name: mh-stuff
-        port-hash: ${{ env.GITHUB_SHA }}
+        port-ref: ${{ env.GITHUB_SHA }}
 
