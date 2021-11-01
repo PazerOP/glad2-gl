@@ -1,0 +1,44 @@
+name: build
+
+on:
+  push:
+
+env:
+  VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
+  VCPKG_FEATURE_FLAGS: manifests,binarycaching
+
+jobs:
+  build:
+    runs-on: windows-latest
+    strategy:
+      fail-fast: true
+      matrix:
+        build_type: [Debug, Release]
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: seanmiddleditch/gha-setup-ninja@v3
+
+    - name: CMake - Configure
+      working-directory: build
+      run: |
+        cmake -G Ninja \
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+          -DCMAKE_TOOLCHAIN_FILE="${{ env.VCPKG_ROOT }}/scripts/buildsystems/vcpkg.cmake" \
+          ../
+
+    - name: CMake - Build
+      working-directory: build
+      run: |
+        cmake --build . --config ${{ matrix.build_type }}
+
+
+  registry-update:
+    runs-on: windows-latest
+
+    steps:
+    - uses: PazerOP/vcpkg-registry-update
+      with:
+        port-name: mh-stuff
+        port-hash: ${{ env.GITHUB_SHA }}
+
