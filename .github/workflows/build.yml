@@ -55,4 +55,5 @@ jobs:
       with:
         port-name: mh-stuff
         port-ref: ${{ github.sha }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
 
