@@ -37,7 +37,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: PazerOP/vcpkg-registry-update
+    - uses: PazerOP/vcpkg-registry-update@HEAD
       with:
         port-name: mh-stuff
         port-hash: ${{ env.GITHUB_SHA }}
