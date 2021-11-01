@@ -28,10 +28,13 @@ jobs:
         vcpkgGitCommitId: 078f3e51efd5ea6072d0ba28d11baa946519a2ce
 
     - name: CMake - Configure
-      working-directory: build
-      shell: pwsh
       run: |
-        cmake -G Ninja -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DCMAKE_TOOLCHAIN_FILE="${{ env.VCPKG_ROOT }}scripts/buildsystems/vcpkg.cmake" ../
+        mkdir build
+        cd build
+        cmake -G Ninja \
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
+          -DCMAKE_TOOLCHAIN_FILE='${{ env.VCPKG_ROOT }}/scripts/buildsystems/vcpkg.cmake' \
+          ../
 
     - name: CMake - Build
       working-directory: build
