@@ -20,6 +20,11 @@ jobs:
         build_type: [Debug, Release]
 
     steps:
+    - name: Debug
+      run: |
+        echo GITHUB_SHA = ${{ env.GITHUB_SHA }}
+        echo github.sha = ${{ github.sha }}
+
     - uses: actions/checkout@v2
     - uses: seanmiddleditch/gha-setup-ninja@v3
 
@@ -49,5 +54,5 @@ jobs:
     - uses: PazerOP/vcpkg-registry-update@HEAD
       with:
         port-name: mh-stuff
-        port-ref: ${{ env.GITHUB_SHA }}
+        port-ref: ${{ github.sha }}
 
