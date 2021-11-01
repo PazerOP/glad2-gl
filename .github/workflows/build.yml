@@ -64,6 +64,6 @@ jobs:
     steps:
     - uses: PazerOP/vcpkg-registry-update@HEAD
       with:
-        port-name: mh-stuff
+        port-name: mh-glad2-gl
         workflow-pat: ${{ secrets.WORKFLOW_PAT }}
 
