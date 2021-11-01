@@ -6,7 +6,7 @@ on:
 env:
   VCPKG_BINARY_SOURCES: 'clear;nuget,GitHub,readwrite'
   VCPKG_FEATURE_FLAGS: manifests,binarycaching
-  X_VCPKG_NUGET_ID_PREFIX: glad2_gl
+  X_VCPKG_NUGET_ID_PREFIX: mh-glad2-gl
 
 defaults:
   run:
