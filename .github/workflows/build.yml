@@ -29,10 +29,11 @@ jobs:
 
     - name: CMake - Configure
       working-directory: build
+      shell: pwsh
       run: |
-        cmake -G Ninja \
-          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} \
-          -DCMAKE_TOOLCHAIN_FILE="${VCPKG_ROOT//\\//}/scripts/buildsystems/vcpkg.cmake" \
+        cmake -G Ninja `
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} `
+          -DCMAKE_TOOLCHAIN_FILE="${VCPKG_ROOT//\\//}/scripts/buildsystems/vcpkg.cmake" `
           ../
 
     - name: CMake - Build
