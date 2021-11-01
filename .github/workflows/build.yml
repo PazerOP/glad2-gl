@@ -29,6 +29,16 @@ jobs:
     - uses: actions/checkout@v2
     - uses: seanmiddleditch/gha-setup-ninja@v3
 
+    - name: Setup NuGet Credentials
+      shell: bash
+      run: >
+        nuget sources add
+        -source "https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json"
+        -storepasswordincleartext
+        -name "GitHub"
+        -username "${{ github.repository_owner }}"
+        -password "${{ github.token }}"
+
     - uses: lukka/run-vcpkg@v10
       with:
         vcpkgGitCommitId: 078f3e51efd5ea6072d0ba28d11baa946519a2ce
