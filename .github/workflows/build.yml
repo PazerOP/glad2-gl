@@ -65,4 +65,5 @@ jobs:
     - uses: PazerOP/vcpkg-registry-update@HEAD
       with:
         port-name: mh-stuff
+        workflow-pat: ${{ secrets.WORKFLOW_PAT }}
 
